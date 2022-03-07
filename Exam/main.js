@@ -16,39 +16,29 @@ app.get("/libraries", logger, checkPermission("librarian"), (req, res) => {
 });
 
 app.get("/authors", logger, checkPermission("author"), (req, res) => {
-    return res.send({ route: "/authors", permission: req.permission});
+    return res.send({ route: "/authors", permission: req.permission });
 });
-
-
 
 function logger(req, res, next) {
     if (req.path == "/books") {
         console.log(req.path);
         next();
-
-    }
-    else if (req.path == "libraries") {
+    } else if (req.path == "libraries") {
         console.log(req.path);
         next();
-
-    }
-    else if (req.path == "authors") {
+    } else if (req.path == "authors") {
         console.log(req.path);
         next();
     }
 }
 
-
 function checkPermission(permission) {
     return function logger1(req, res, next) {
         if (permission == "librarian") {
-            req.permission = true
-
+            req.permission = true;
+        } else if (permission == "author") {
+            req.permission = true;
         }
-        else if (permission == "author") {
-            req.permission = true
-
-        }
-        next ()
+        next();
     };
 }
