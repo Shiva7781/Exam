@@ -23,10 +23,10 @@ function logger(req, res, next) {
     if (req.path == "/books") {
         console.log(req.path);
         next();
-    } else if (req.path == "libraries") {
+    } else if (req.path == "/libraries") {
         console.log(req.path);
         next();
-    } else if (req.path == "authors") {
+    } else if (req.path == "/authors") {
         console.log(req.path);
         next();
     }
