@@ -25,4 +25,4 @@ app.post("/", async (req, res) => {
     }
 })
 
-module.export = app
+module.exports = app

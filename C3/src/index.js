@@ -4,10 +4,10 @@ const app = express()
 
 app.use(express.json())
 
-const usersControlles = require("./controllers/usersControlles")
-const booksControlles = require("./controllers/booksControlles")
-const commentssControlles = require("./controllers/commentssControlles")
-const publicationsControlles = require("./controllers/publicationsControlles")
+const usersControlles = require("./controllers/users.controllers")
+const booksControlles = require("./controllers/books.controllers")
+const commentssControlles = require("./controllers/comments.controllers")
+const publicationsControlles = require("./controllers/publications.controllers")
 
 
 app.use("/users", usersControlles)

@@ -1,12 +1,14 @@
-const app = require("./index")
+const app = require("./index");
 
-const connect = require("./configs/db")
+const connect = require("./configs/db");
 
 app.listen(5100, async () => {
     try {
-        await connect()
-    } catch (error) {
+        await connect();
+        
         console.log("listening on port 5100");
-
+    } catch (error) {
+        console.log(error);
     }
-})
+    
+});
