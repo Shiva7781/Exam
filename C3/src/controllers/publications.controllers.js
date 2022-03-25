@@ -8,7 +8,7 @@ app.get("/", async (req, res) => {
     try {
         const publications = await Publications.find().lean().exec();
 
-        return res.status(201).send({ publications: publicatios })
+        return res.status(201).send({ publications: publications })
     } catch (error) {
         return res.status(501).send({ message: error.message })
     }
@@ -16,9 +16,9 @@ app.get("/", async (req, res) => {
 
 app.post("/", async (req, res) => {
     try {
-        const publicatios = await Publications.create(req.body)
+        const publications = await Publications.create(req.body)
 
-        return res.status(201).send(publicatios)
+        return res.status(201).send(publications)
         
     } catch (error) {
         return res.status(501).send({ message: error.message })

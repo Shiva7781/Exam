@@ -16,7 +16,7 @@ app.use("/books", booksControlles)
 
 app.use("/comments", commentssControlles)
 
-app.use("/publication", publicationsControlles)
+app.use("/publications", publicationsControlles)
 
 
 const connect = require("./configs/db")
