@@ -2,7 +2,7 @@ const express = require("express");
 const connect=require("./configs/db");
 
 const userController=require("./controllers/user.controllers")
-const postController=require("./controllers/todo.controllers")
+const todoController=require("./controllers/todo.controllers")
 const{register,login}=require("./controllers/auth.controller")
 
 const app=express();
