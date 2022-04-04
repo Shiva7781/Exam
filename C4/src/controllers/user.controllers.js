@@ -1,5 +1,28 @@
 const express = require("express");
 
-const route = express.Router();
+const router = express.Router();
 
-module.exports = route;
+const User = require("../models/users.model");
+
+router.get("/", async(req,res) => {
+    try {
+        const users = await User.find().lean().exec();
+        return res.status(200).send(users);
+    } catch(err) {
+        return res.status(500).send(err);
+    }
+});
+
+router.post("/", async(req,res) => {
+    try {
+        const user = await User.create(req.body);
+        return res.status(200).send(user);
+    } catch(err) {
+        return res.status(500).send(err);
+    }
+});
+
+
+
+
+module.exports = router;
